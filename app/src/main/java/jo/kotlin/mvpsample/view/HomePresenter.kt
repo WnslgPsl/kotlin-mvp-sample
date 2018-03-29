@@ -7,7 +7,9 @@ package jo.kotlin.mvpsample
 class HomePresenter (val view: MainContract.View) : MainContract.Presenter{
 
     override fun loadFlickrPhotos() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
+        view.showProgress()
+
 
     }
 
