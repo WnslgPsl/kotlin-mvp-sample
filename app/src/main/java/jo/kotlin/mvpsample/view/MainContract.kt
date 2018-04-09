@@ -9,6 +9,8 @@ interface MainContract {
     interface View{
         fun hideProgress()
         fun showProgress()
+        fun showMessage(msg: String)
+        fun showDetailInfo(title: String)
     }
 
     interface Presenter{

@@ -14,7 +14,6 @@ class NetworkInterceptor : Interceptor {
     private val TAG: String = NetworkInterceptor::class.java.simpleName
 
     override fun intercept(chain: Interceptor.Chain): Response {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
         val request = chain.request()
         Log.d(TAG, "intercept : request method " + request.method())
         Log.d(TAG, "intercept : request url " + request.headers())

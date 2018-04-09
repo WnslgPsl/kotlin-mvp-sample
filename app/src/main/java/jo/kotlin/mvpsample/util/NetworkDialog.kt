@@ -26,7 +26,7 @@ import jo.kotlin.mvpsample.R
     }
 
     fun dismissNetworkDialog(){
-        if (!this.isShowing) this.dismiss()
+        if (this.isShowing) this.dismiss()
     }
 
 

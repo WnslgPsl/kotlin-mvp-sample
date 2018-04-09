@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 /**
  * Created by Jo on 2018. 3. 29.
  */
- 
+
 data class PhotoResponse(
         @SerializedName("photos") val photos: Photos,
         @SerializedName("stat") val stat: String,
@@ -18,7 +18,7 @@ data class Photos(
         @SerializedName("pages") val pages: String,
         @SerializedName("perpage") val perpage: Int,
         @SerializedName("total") val total: String,
-        @SerializedName("photo") val photo: List<Photo>
+        @SerializedName("photo") val photo: ArrayList<Photo>
 )
 
 data class Photo(
@@ -31,4 +31,7 @@ data class Photo(
         @SerializedName("ispublic") val ispublic: Int,
         @SerializedName("isfriend") val isfriend: Int,
         @SerializedName("isfamily") val isfamily: Int
-)
+
+) {
+    fun getPhotoURL(): String = "https://farm$farm.staticflickr.com/$server/${id}_$secret.jpg"
+}
