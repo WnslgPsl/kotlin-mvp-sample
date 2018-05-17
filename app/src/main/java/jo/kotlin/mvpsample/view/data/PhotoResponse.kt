@@ -1,18 +1,20 @@
 package jo.kotlin.mvpsample.view.data
 
 import com.google.gson.annotations.SerializedName
+import jo.kotlin.mvpsample.util.Mockable
 
 /**
  * Created by Jo on 2018. 3. 29.
  */
 
+@Mockable
 data class PhotoResponse(
         @SerializedName("photos") val photos: Photos,
         @SerializedName("stat") val stat: String,
         @SerializedName("code") val code: Int,
         @SerializedName("message") val message: String
 )
-
+@Mockable
 data class Photos(
         @SerializedName("page") val page: Int,
         @SerializedName("pages") val pages: String,
@@ -20,7 +22,7 @@ data class Photos(
         @SerializedName("total") val total: String,
         @SerializedName("photo") val photo: ArrayList<Photo>
 )
-
+@Mockable
 data class Photo(
         @SerializedName("id") val id: String,
         @SerializedName("owner") val owner: String,

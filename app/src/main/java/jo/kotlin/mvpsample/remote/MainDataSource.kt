@@ -8,11 +8,12 @@ import jo.kotlin.mvpsample.view.data.PhotoResponse
 
 interface MainDataSource {
 
-    interface LoadFlickrCallback<T> {
-        fun onSuccess(t: T)
+
+    interface LoadFlickrCallback {
+        fun onSuccess(t: PhotoResponse)
         fun onFailure(message: String)
     }
 
     fun getSearchPhotos(format: String, nojsoncallback: String, method: String, searchKeyword: String, flickrKey: String, requestPage: Int,
-                                 requestPerPage: Int, callback: LoadFlickrCallback<PhotoResponse>)
+                                 requestPerPage: Int, callback: LoadFlickrCallback)
 }

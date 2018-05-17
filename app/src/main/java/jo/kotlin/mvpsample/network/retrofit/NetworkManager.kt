@@ -1,5 +1,6 @@
 package jo.kotlin.mvpsample.network.retrofit
 
+import jo.kotlin.mvpsample.util.Mockable
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -7,7 +8,8 @@ import retrofit2.Response
 /**
  * Created by Jo on 2018. 4. 2.
  */
- 
+
+@Mockable
 class NetworkManager<T> (val call:Call<T> )  {
 
 
@@ -15,6 +17,7 @@ class NetworkManager<T> (val call:Call<T> )  {
         call.enqueue(object : Callback<T> {
             override fun onResponse(call: Call<T>, response: Response<T>) {
 
+                System.out.println()
                 if (response.isSuccessful) {
                     if (response.body() != null) {
                         mNetworkCallbackListener.onResponse(response.body() as T)

@@ -17,8 +17,12 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         NetworkDialog(this@MainActivity)
     }
 
+    private val mainRepository: MainRepository by lazy {
+        MainRepository()
+    }
+
     private val presenter: HomePresenter by lazy {
-        HomePresenter(this@MainActivity, MainRepository, mainAdapter, mainAdapter)
+        HomePresenter(this@MainActivity, mainRepository, mainAdapter, mainAdapter)
     }
 
     private val mainAdapter: MainRecyclerAdapter by lazy {

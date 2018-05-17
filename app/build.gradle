@@ -6,6 +6,8 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
 
+apply plugin: 'kotlin-allopen'
+
 android {
     compileSdkVersion 27
     defaultConfig {
@@ -29,6 +31,10 @@ android {
     }
 }
 
+allOpen {
+    annotation('jo.kotlin.mvpsample.util.Mockable')
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
@@ -40,6 +46,8 @@ dependencies {
     implementation "com.github.bumptech.glide:glide:4.6.1"
     kapt 'com.github.bumptech.glide:compiler:4.6.1'
     testImplementation 'junit:junit:4.12'
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:2.0.0-alpha04"
+    testImplementation 'org.awaitility:awaitility:3.1.0'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 }
